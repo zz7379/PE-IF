@@ -1,0 +1,31 @@
+_parent_: projects/neuralangelo/configs/base.yaml
+data:
+    num_images: 46
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: /home/cloud/datasets/rschip_less/dense
+    train:
+        image_size:
+        - 1076
+        - 1922
+    type: projects.neuralangelo.data
+    val:
+        image_size:
+        - 300
+        - 535
+model:
+    appear_embed:
+        dim: 8
+        enabled: true
+    object:
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 4
+            mlp:
+                inside_out: false
+max_iter: 100200

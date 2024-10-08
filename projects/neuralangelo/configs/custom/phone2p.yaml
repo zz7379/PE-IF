@@ -1,0 +1,30 @@
+_parent_: projects/neuralangelo/configs/base.yaml
+data:
+    num_images: 29
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: /home/cloud/datasets/phone2p/dense
+    train:
+        image_size:
+        - 544
+        - 963
+    type: projects.neuralangelo.data
+    val:
+        image_size:
+        - 300
+        - 531
+model:
+    appear_embed:
+        dim: 8
+        enabled: true
+    object:
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 4
+            mlp:
+                inside_out: false

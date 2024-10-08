@@ -1,0 +1,30 @@
+_parent_: projects/neuralangelo/configs/base.yaml
+data:
+    num_images: 143
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: /home/cloud/datasets/scene_real/dense
+    train:
+        image_size:
+        - 1076
+        - 1914
+    type: projects.neuralangelo.data
+    val:
+        image_size:
+        - 300
+        - 533
+model:
+    appear_embed:
+        dim: 8
+        enabled: true
+    object:
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 4
+            mlp:
+                inside_out: false

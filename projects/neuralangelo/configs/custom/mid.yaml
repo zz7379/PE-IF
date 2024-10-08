@@ -1,0 +1,46 @@
+_parent_: projects/neuralangelo/configs/base.yaml
+data:
+    num_images: 76
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: /home/cloud/datasets/mid_neuralangelo/dense
+    train:
+        image_size:
+        - 717
+        - 1276
+    type: projects.neuralangelo.data
+    val:
+        image_size:
+        - 300
+        - 533
+model:
+    appear_embed:
+        dim: 8
+        enabled: true
+    object:
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 4
+            mlp:
+                inside_out: false
+
+checkpoint:
+    save_epoch: 20
+    save_iter: 20000
+    save_latest_iter: 20000
+    save_period: 20000
+    strict_resume: true
+image_save_iter: 1000
+inference_args: {}
+local_rank: 0
+logging_iter: 200
+max_epoch: 1000
+max_iter: 500000
+validation_iter: 1000
+wandb_image_iter: 1000
+wandb_scalar_iter: 100
